@@ -27,6 +27,7 @@ type
     procedure TestFirstName;
     procedure TestLastName;
     procedure TestSalary;
+    procedure TestFullName;
   end;
 
 implementation
@@ -51,9 +52,19 @@ begin
   CheckEqualsString(ExpectedValue, FPerson.FirstName);
 end;
 
+procedure TestTPerson.TestFullName;
+const
+  ExpectedValue = 'Thimsfrabble, Fred';
+begin
+  FPerson.FirstName := 'Fred';
+  FPerson.LastName  := 'Thimsfrabble';
+
+  CheckEqualsString(ExpectedValue, FPerson.FullName);
+end;
+
 procedure TestTPerson.TestLastName;
 const
-  ExpectedValue = 'Thimsfrabble';
+  ExpectedValue = 'THIMSFRABBLE';
 begin
   FPerson.LastName := 'Thimsfrabble';
 
