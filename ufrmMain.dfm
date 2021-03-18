@@ -33,9 +33,9 @@ object Form1: TForm1
     object lblFullName: TLabel
       Left = 16
       Top = 16
-      Width = 107
+      Width = 112
       Height = 19
-      Caption = 'Mark Anderson'
+      Caption = 'Mark Anderson '
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
       Font.Height = -16
@@ -111,6 +111,7 @@ object Form1: TForm1
       DataSource = PrototypeBindSource1
       FieldName = 'FullName'
       Component = lblFullName
+      CustomFormat = '%s + '#39' '#39
       ComponentProperty = 'Caption'
     end
   end
@@ -141,6 +142,7 @@ object Form1: TForm1
         ReadOnly = False
       end>
     ScopeMappings = <>
+    OnCreateAdapter = PrototypeBindSource1CreateAdapter
     Left = 264
     Top = 272
   end
